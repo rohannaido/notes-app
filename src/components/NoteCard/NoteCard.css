@@ -17,3 +17,12 @@
 .noteCard_text{
     color: #374151;
 }
+
+.noteCard_bottomRow{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.noteCard_deleteIcon{
+    cursor: pointer;
+}

@@ -6,10 +6,17 @@ import NotesPage from './pages/NotesPage/NotesPage';
 import Login from './pages/Login/Login';
 import { useEffect } from 'react';
 import { getUserNotes } from './firebase/fetchData';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
 
-
+  const userId = useSelector(state => state.user.uid);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    console.log("APP USEEFFECT", userId);
+    // loadNotes();
+    getUserNotes(dispatch, userId);
+  },[userId])
 
   return (
     <div className="App">

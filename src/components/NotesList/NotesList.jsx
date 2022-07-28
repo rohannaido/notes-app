@@ -6,7 +6,7 @@ const NotesList = ({notes}) => {
     
     return (
         <div className="notesList">
-            {notes && notes.map(item => <NoteCard noteData={item} />)}
+            {notes && notes.map(item => <NoteCard noteData={item} key={item._id} />)}
         </div>
     )
 }

@@ -1,29 +1,21 @@
 import './NotesPage.css'
 import NotesList from "../../components/NotesList/NotesList";
 import { useState, useEffect } from 'react';
-// import notes from '../../data/notes';
 import { getUserNotes } from '../../firebase/fetchData';
 import { createNote } from '../../firebase/service';
+import { useDispatch, useSelector } from 'react-redux';
+// import { v4 as uuidv4 } from 'uuid';
 
 const NotesPage = () => {
 
-    const [notesArr, setNotesArr] = useState([]);
+    const dispatch = useDispatch();
+    const notesData = useSelector(state => state.notes.allNotes);
+    const userId = useSelector(state => state.user.uid);
     const [ showCreateNote, setShowCreateNote] = useState(false);
     const [ newNoteItem, setNewNoteItem ] = useState({
         title: "",
         text: "",
-    })
-
-    const loadNotes = async () => {
-        const data = await getUserNotes();
-        console.log(data);
-        setNotesArr(data);
-    }
-
-    useEffect(() => {
-        loadNotes();
-
-    },[])
+    });
 
     return (
         <div className="notesPage">
@@ -50,8 +42,8 @@ const NotesPage = () => {
                         autoFocus/>
                     <div className='notesPage_takeNoteBottomRow'>
                         <button className='notesPage_saveButton' onClick={() => { 
-                            createNote(newNoteItem).then(() => {
-                                loadNotes();
+                            createNote(dispatch, newNoteItem).then(() => {
+                                // getUserNotes(dispatch, userId);
                                 setNewNoteItem({
                                     title: "",
                                     text: "",
@@ -66,7 +58,7 @@ const NotesPage = () => {
                 }
             </div>
             
-            <NotesList notes={notesArr} />
+            {notesData && <NotesList notes={notesData} />}
         </div>
     )
 

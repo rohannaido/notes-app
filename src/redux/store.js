@@ -11,6 +11,7 @@ import {
   } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import userReducer from './userRedux';
+import notesReducer from './notesRedux';
 
 const persistConfig = {
     key: "notesapp",
@@ -18,7 +19,7 @@ const persistConfig = {
     storage,
 };
 
-const rootReducer = combineReducers({ user: userReducer });
+const rootReducer = combineReducers({ user: userReducer, notes: notesReducer });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
