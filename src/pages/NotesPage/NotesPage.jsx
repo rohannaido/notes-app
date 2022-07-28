@@ -10,7 +10,11 @@ const NotesPage = () => {
 
     const dispatch = useDispatch();
     const notesData = useSelector(state => state.notes.allNotes);
-    const userId = useSelector(state => state.user.uid);
+    const userId = useSelector(state => {
+        
+        console.log(state.user);
+        return state.user.value.uid});
+    console.log("DEBUGG ", userId);
     const [ showCreateNote, setShowCreateNote] = useState(false);
     const [ newNoteItem, setNewNoteItem ] = useState({
         title: "",
@@ -21,7 +25,8 @@ const NotesPage = () => {
         <div className="notesPage">
 
             <div className="notesPage_createNotePanel">
-                {!showCreateNote ? 
+                {!userId ? <span className='notesPage_loginMessage' >Please login to see your notes...</span> : 
+                !showCreateNote ? 
                 <input className='notesPage_takeNoteInputButton' type='text' placeholder='Take a note...' onClick={() => 
                     setShowCreateNote(true)} 
                     onChange={(e) => {
@@ -55,6 +60,7 @@ const NotesPage = () => {
                         </button>
                     </div>
                 </div>
+                
                 }
             </div>
             

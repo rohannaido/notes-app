@@ -20,7 +20,12 @@
 
 .noteCard_bottomRow{
     display: flex;
-    justify-content: flex-end;
+    padding-top: 1rem;
+    justify-content: space-between;
+}
+
+.noteCard_editIcon{
+    cursor: pointer;
 }
 
 .noteCard_deleteIcon{

@@ -1,5 +1,5 @@
 import './SideBar.css'
-import { AiOutlineBulb } from 'react-icons/ai'
+import { AiOutlineBulb, AiOutlineClockCircle, AiOutlineDelete } from 'react-icons/ai'
 
 const SideBar = () => {
     return (
@@ -13,7 +13,7 @@ const SideBar = () => {
                 </li>
                 <li className=''>
                     <span className='sideBar_icon'>
-                        <AiOutlineBulb />
+                        <AiOutlineClockCircle />
                     </span>
                     Reminders
                 </li>
@@ -25,7 +25,7 @@ const SideBar = () => {
                 </li>
                 <li className=''>
                     <span className='sideBar_icon'>
-                        <AiOutlineBulb />
+                        <AiOutlineDelete />
                     </span>
                     Bin
                 </li>

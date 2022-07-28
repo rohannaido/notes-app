@@ -1,0 +1,63 @@
+.editNote{
+    width: calc(100vw - var(--sidebar-width));
+    height: calc(100vh - var(--navbar-height));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editNote_form{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px 0 gray;
+    /* width: 50%; */
+    /* height: 50%; */
+    border-radius: 0.5rem;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.editNote_labelText{
+    display: none;
+}
+
+.editNote_form input, .editNote_form textarea{
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0.5rem;
+
+}
+
+.editNote_form input{
+    border-bottom: 1px solid gainsboro;
+    border-radius: 0.5rem;
+    min-width: 20rem;
+}
+
+.editNote_form textarea{
+    width: 100%;
+    min-height: 15rem;
+}
+
+.editNote_textInput{
+    resize: none;
+}
+
+.editNote_bottomRow{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+.editNote_saveButton{
+    border: none;
+    font-size: inherit;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.editNote_saveButton:hover{
+    outline: 1px solid gray;
+}

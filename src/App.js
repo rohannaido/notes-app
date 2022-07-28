@@ -7,6 +7,7 @@ import Login from './pages/Login/Login';
 import { useEffect } from 'react';
 import { getUserNotes } from './firebase/fetchData';
 import { useDispatch, useSelector } from 'react-redux';
+import EditNote from './pages/EditNote/EditNote';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
             <Routes>
               <Route path='/' element={<NotesPage />} />
               <Route path='/login' element={<Login />} />
+              <Route path='/note/:id' element={<EditNote />} />
             </Routes>
         </div>
       </HashRouter>

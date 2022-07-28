@@ -11,6 +11,10 @@
     max-width: calc(100vw - var(--sidebar-width));
 }
 
+.notesPage_loginMessage{
+    font-size: 2rem;
+}
+
 .notesPage_createNotePanel *{
     font-family: inherit;
 }

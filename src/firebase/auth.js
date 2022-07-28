@@ -12,6 +12,8 @@ import {
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from "./firebaseConfig.js";
+import { clearNotesState } from "../redux/notesRedux.js";
+import { getUserNotes } from "./service";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
@@ -23,8 +25,9 @@ async function loginApp(dispatch, email, password){
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
         const { accessToken, uid, displayName } = user;
-        console.log('accessToken: ', accessToken);
+        console.log('object: ', { accessToken, uid, displayName });
         dispatch(userLogIn({ accessToken, uid, displayName }));
+        getUserNotes(dispatch, uid);
         return displayName;
       }
       catch(error){
@@ -39,7 +42,8 @@ async function loginApp(dispatch, email, password){
 async function signOutApp(dispatch){
     signOut(auth).then(() => {
       // Sign-out successful.
-      dispatch(userLogOut())
+      dispatch(userLogOut());
+      dispatch(clearNotesState());
     }).catch((error) => {
       // An error happened.
       console.log(error);

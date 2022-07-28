@@ -23,10 +23,23 @@
 .loginPage_form input {
     padding: 0.25rem;
     width: 250px;
+    font-size: inherit;
+    border-radius: 0.5rem;
+    border: 1px solid gray;
 }
 
 .loginPage_signInBtn{
     margin-top: 1rem;
-    padding: 0.25rem;
+    padding: 0.5rem 0.25rem;
     font-size: inherit;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: #38bdf8;
+    color: white;
+    font-weight: bold;
+}
+
+.loginPage_signInBtn:hover{
+    outline: 1px solid gray;
 }
