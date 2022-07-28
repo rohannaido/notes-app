@@ -1,0 +1,31 @@
+.sideBar{
+    width: var(--sidebar-width);
+    border-right: 1px solid gainsboro;
+    height: calc(100vh - var(--navbar-height));
+}
+
+.sideBar ul {
+    list-style: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    padding: 1rem 0;
+}
+
+.sideBar ul li{
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.sideBar ul li:hover{
+    background-color: #d1d5db;
+}
+
+.sideBar ul li.active{
+    background-color: #d1d5db;
+}
