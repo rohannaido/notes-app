@@ -6,7 +6,28 @@ const SideBar = () => {
         <div className='sideBar'>
             <ul>
                 <li className='active'>
-                    <AiOutlineBulb />Notes
+                    <span className='sideBar_icon'>
+                        <AiOutlineBulb />
+                    </span>
+                        Notes
+                </li>
+                <li className=''>
+                    <span className='sideBar_icon'>
+                        <AiOutlineBulb />
+                    </span>
+                    Reminders
+                </li>
+                <li className=''>
+                    <span className='sideBar_icon'>
+                        <AiOutlineBulb />
+                    </span>
+                    Projects
+                </li>
+                <li className=''>
+                    <span className='sideBar_icon'>
+                        <AiOutlineBulb />
+                    </span>
+                    Bin
                 </li>
             </ul>
         </div>

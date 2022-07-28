@@ -1,7 +1,11 @@
 .sideBar{
-    width: var(--sidebar-width);
-    border-right: 1px solid gainsboro;
-    height: calc(100vh - var(--navbar-height));
+    min-width: var(--sidebar-width);
+    /* border-right: 1px solid gainsboro; */
+    min-height: calc(100vh - var(--navbar-height));
+}
+
+.sideBar_icon{
+    font-size: 1.25rem;
 }
 
 .sideBar ul {
@@ -16,16 +20,18 @@
     padding: 1rem 1rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    font-size: 1.1rem;
+    gap: 1.5rem;
+    font-size: 1rem;
     cursor: pointer;
     font-weight: 500;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
 }
 
 .sideBar ul li:hover{
-    background-color: #d1d5db;
+    background-color: #f3f4f6;
 }
 
 .sideBar ul li.active{
-    background-color: #d1d5db;
+    background-color: #feefc3;
 }

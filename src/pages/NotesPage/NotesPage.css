@@ -1,0 +1,75 @@
+.notesPage{
+    width: 100%;
+    --new-input-width: 50%;
+}
+
+.notesPage_createNotePanel{
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notesPage_createNotePanel *{
+    font-family: inherit;
+}
+
+.notesPage_takeNoteInputButton{
+    width: var(--new-input-width);
+    padding: 0.5rem 1rem;
+    border: none;
+    font-size: inherit;
+    outline: none;
+    background-color: transparent;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 5px 0 grey;
+}
+
+.notesPage_takeNoteDiv{
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 5px 0 grey;
+    width: var(--new-input-width);
+    gap: 0.5rem;
+}
+
+.notesPage_takeNoteInput{
+    padding: 0.5rem 1rem;
+    border: none;
+    font-size: inherit;
+    outline: none;
+    background-color: transparent;
+}
+
+.notesPage_takeNoteInput.title{
+    font-weight: 600;
+}
+
+.notesPage_takeNoteInput.text{
+    resize: none;
+}
+
+.notesPage_takeNoteBottomRow{
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.notesPage_saveButton{
+    border: none;
+    font-size: inherit;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.notesPage_saveButton:hover{
+    outline: 1px solid gray;
+}
+
+@media screen and (max-width: 768px) {
+    .notesPage{
+        --new-input-width: 80%;
+    }
+}

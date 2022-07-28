@@ -6,4 +6,5 @@
     padding: 0 1rem;
     height: var(--navbar-height);
     box-shadow: 0 0 7px 0px gainsboro;
+    background-color: white;
 }

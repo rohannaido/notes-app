@@ -1,0 +1,19 @@
+.noteCard{
+    border: 1px solid gainsboro;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 14rem;
+    height: fit-content;
+}
+
+.noteCard:hover{
+    box-shadow: 0 0 3px 0 gainsboro;
+}
+
+.noteCard_title{
+    padding-bottom: 0.5rem;
+}
+
+.noteCard_text{
+    color: #374151;
+}
