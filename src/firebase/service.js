@@ -1,9 +1,10 @@
 import firebaseConfig from "./firebaseConfig.js";
 import { initializeApp } from "firebase/app";
 import { loginApp, signOutApp } from "./auth.js";
-// import { getUserData } from "./fetchData.js";
+import { getUserNotes } from "./fetchData.js";
 // import { updateHistory, clearHistory } from "./updateUserData.js";
+import { createNote } from "./updateData.js";
 
 const app = initializeApp(firebaseConfig);
 
-export { loginApp, signOutApp };
+export { loginApp, signOutApp, getUserNotes, createNote };

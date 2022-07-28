@@ -4,8 +4,13 @@ import NavBar from './components/NavBar/NavBar';
 import SideBar from './components/SideBar/SideBar';
 import NotesPage from './pages/NotesPage/NotesPage';
 import Login from './pages/Login/Login';
+import { useEffect } from 'react';
+import { getUserNotes } from './firebase/fetchData';
 
 function App() {
+
+
+
   return (
     <div className="App">
       <HashRouter>

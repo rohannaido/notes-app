@@ -1,17 +1,29 @@
 import './NotesPage.css'
 import NotesList from "../../components/NotesList/NotesList";
-import { useState } from 'react';
-import notes from '../../data/notes';
-import { v4 as uuid } from 'uuid';
+import { useState, useEffect } from 'react';
+// import notes from '../../data/notes';
+import { getUserNotes } from '../../firebase/fetchData';
+import { createNote } from '../../firebase/service';
 
 const NotesPage = () => {
 
-    const [notesArr, setNotesArr] = useState(notes);
+    const [notesArr, setNotesArr] = useState([]);
     const [ showCreateNote, setShowCreateNote] = useState(false);
     const [ newNoteItem, setNewNoteItem ] = useState({
         title: "",
         text: "",
     })
+
+    const loadNotes = async () => {
+        const data = await getUserNotes();
+        console.log(data);
+        setNotesArr(data);
+    }
+
+    useEffect(() => {
+        loadNotes();
+
+    },[])
 
     return (
         <div className="notesPage">
@@ -38,12 +50,14 @@ const NotesPage = () => {
                         autoFocus/>
                     <div className='notesPage_takeNoteBottomRow'>
                         <button className='notesPage_saveButton' onClick={() => { 
-                            setNotesArr(prev => ([newNoteItem, ...prev]) ); 
-                            setNewNoteItem({
-                                title: "",
-                                text: "",
-                            })
-                            setShowCreateNote(false);
+                            createNote(newNoteItem).then(() => {
+                                loadNotes();
+                                setNewNoteItem({
+                                    title: "",
+                                    text: "",
+                                })
+                                setShowCreateNote(false);
+                            }).catch(error => console.log(error))
                             }}>
                             Save
                         </button>
