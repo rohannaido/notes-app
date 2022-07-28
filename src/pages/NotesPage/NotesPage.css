@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: calc(100vw - var(--sidebar-width));
 }
 
 .notesPage_createNotePanel *{

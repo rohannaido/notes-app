@@ -1,4 +1,5 @@
 import './NavBar.css'
+import LoginButton from '../LoginButton/LoginButton';
 
 const NavBar = () => {
     return (
@@ -10,7 +11,7 @@ const NavBar = () => {
                 <input type='text' />
             </div>
             <div>
-                <h4>Login</h4>
+                <LoginButton />
             </div>
         </div>
     )

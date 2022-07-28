@@ -2,6 +2,7 @@ import './NotesPage.css'
 import NotesList from "../../components/NotesList/NotesList";
 import { useState } from 'react';
 import notes from '../../data/notes';
+import { v4 as uuid } from 'uuid';
 
 const NotesPage = () => {
 
