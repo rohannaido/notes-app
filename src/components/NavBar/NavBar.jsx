@@ -5,7 +5,7 @@ const NavBar = () => {
     return (
         <div className='navBar'>
             <div>
-                <h1>Notes</h1>
+                <h1 className='navBar_logo'>Productiv</h1>
             </div>
             <div>
                 <input type='text' />

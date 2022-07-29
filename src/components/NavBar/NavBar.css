@@ -8,3 +8,7 @@
     box-shadow: 0 0 7px 0px gainsboro;
     background-color: white;
 }
+
+.navBar_logo{
+    font-family: monospace;
+}

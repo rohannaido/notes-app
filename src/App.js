@@ -8,6 +8,10 @@ import { useEffect } from 'react';
 import { getUserNotes } from './firebase/fetchData';
 import { useDispatch, useSelector } from 'react-redux';
 import EditNote from './pages/EditNote/EditNote';
+import { updateProfile } from 'firebase/auth';
+import { getAuth } from 'firebase/auth'
+import SignUp from './pages/Login/SignUp';
+import { getCurrUserId } from './firebase/auth';
 
 function App() {
 
@@ -15,7 +19,6 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     console.log("APP USEEFFECT", userId);
-    // loadNotes();
     getUserNotes(dispatch, userId);
   },[userId])
 
@@ -28,6 +31,7 @@ function App() {
             <Routes>
               <Route path='/' element={<NotesPage />} />
               <Route path='/login' element={<Login />} />
+              <Route path='/signUp' element={<SignUp />} />
               <Route path='/note/:id' element={<EditNote />} />
             </Routes>
         </div>

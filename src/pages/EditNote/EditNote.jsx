@@ -19,17 +19,17 @@ const EditNote = () => {
             <form className='editNote_form'>
                 <label>
                     <span className='editNote_labelText'>Title</span>
-                    <input className='editNote_titleInput' value={noteData.title} onChange={(e) => setNoteData(prev => 
+                    <input className='editNote_titleInput' placeholder="Title" value={noteData.title} onChange={(e) => setNoteData(prev => 
                         ({...prev, title: e.target.value})) } />
                 </label>
                 <label>
                     <span className='editNote_labelText'>Text</span>
-                    <textarea className='editNote_textInput' value={noteData.text} onChange={(e) => setNoteData(prev => 
+                    <textarea className='editNote_textInput' placeholder="Take a note..." value={noteData.text} onChange={(e) => setNoteData(prev => 
                         ({...prev, text: e.target.value})) } />
                 </label>
                 <div className='editNote_bottomRow'>
                     <button className='editNote_saveButton' onClick={() => {
-                        
+
                     }}>
                         Save
                     </button>

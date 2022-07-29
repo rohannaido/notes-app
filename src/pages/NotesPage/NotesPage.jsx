@@ -11,10 +11,8 @@ const NotesPage = () => {
     const dispatch = useDispatch();
     const notesData = useSelector(state => state.notes.allNotes);
     const userId = useSelector(state => {
-        
-        console.log(state.user);
         return state.user.value.uid});
-    console.log("DEBUGG ", userId);
+    
     const [ showCreateNote, setShowCreateNote] = useState(false);
     const [ newNoteItem, setNewNoteItem ] = useState({
         title: "",
