@@ -23,7 +23,7 @@ const NotesPage = () => {
         <div className="notesPage">
 
             <div className="notesPage_createNotePanel">
-                {!userId ? <span className='notesPage_loginMessage' >Please login to see your notes...</span> : 
+                {!userId ? <span className='notesPage_loginMessage' >Hi There,<br />Please login to see your notes...</span> : 
                 !showCreateNote ? 
                 <input className='notesPage_takeNoteInputButton' type='text' placeholder='Take a note...' onClick={() => 
                     setShowCreateNote(true)} 

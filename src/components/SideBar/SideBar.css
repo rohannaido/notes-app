@@ -2,6 +2,19 @@
     min-width: var(--sidebar-width);
     /* border-right: 1px solid gainsboro; */
     min-height: calc(100vh - var(--navbar-height));
+    background-color: white;
+}
+
+.sideBar a:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+.sideBar a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
 }
 
 .sideBar_icon{
@@ -34,4 +47,14 @@
 
 .sideBar ul li.active{
     background-color: #feefc3;
+}
+
+@media screen and (max-width: 768px) {
+    .sideBar{
+        transform: translateX(-100%);
+        transition: transform 0.2s;
+    }
+    .show-sidebar{
+        transform: translateX(0%);
+    }
 }

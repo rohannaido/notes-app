@@ -77,4 +77,8 @@
     .notesPage{
         --new-input-width: 80%;
     }
+
+    .notesPage_createNotePanel{
+        max-width: calc(100vw);
+    }
 }

@@ -61,3 +61,12 @@
 .editNote_saveButton:hover{
     outline: 1px solid gray;
 }
+
+@media screen and (max-width: 768px) {
+    .editNote{
+        /* width: 100vw; */
+    }
+    /* .editNote_form{
+        justify-content: center;
+    } */
+}

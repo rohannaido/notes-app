@@ -1,34 +1,43 @@
 import './SideBar.css'
 import { AiOutlineBulb, AiOutlineClockCircle, AiOutlineDelete } from 'react-icons/ai'
+import { Link } from 'react-router-dom';
 
-const SideBar = () => {
+const SideBar = ({drawer}) => {
     return (
-        <div className='sideBar'>
+        <div className={`sideBar ${drawer && 'show-sidebar'}`}>
             <ul>
-                <li className='active'>
-                    <span className='sideBar_icon'>
-                        <AiOutlineBulb />
-                    </span>
-                        Notes
-                </li>
-                <li className=''>
-                    <span className='sideBar_icon'>
-                        <AiOutlineClockCircle />
-                    </span>
-                    Reminders
-                </li>
-                <li className=''>
-                    <span className='sideBar_icon'>
-                        <AiOutlineBulb />
-                    </span>
-                    Projects
-                </li>
-                <li className=''>
-                    <span className='sideBar_icon'>
-                        <AiOutlineDelete />
-                    </span>
-                    Bin
-                </li>
+                <Link to='/'>
+                    <li className='active'>
+                        <span className='sideBar_icon'>
+                            <AiOutlineBulb />
+                        </span>
+                            Notes
+                    </li>
+                </Link>
+                <Link to='/soon'>
+                    <li className=''>
+                        <span className='sideBar_icon'>
+                            <AiOutlineClockCircle />
+                        </span>
+                        Reminders
+                    </li>
+                </Link>
+                <Link to='/soon'>
+                    <li className=''>
+                        <span className='sideBar_icon'>
+                            <AiOutlineBulb />
+                        </span>
+                        Projects
+                    </li>
+                </Link>
+                <Link to='/soon'>
+                    <li className=''>
+                        <span className='sideBar_icon'>
+                            <AiOutlineDelete />
+                        </span>
+                        Bin
+                    </li>
+                </Link>
             </ul>
         </div>
     )

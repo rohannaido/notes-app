@@ -25,3 +25,10 @@
   max-width: calc(100vw - var(--sidebar-width));
   /* overflow-x: hidden; */
 }
+
+@media screen and (max-width: 768px) {
+  .app_content > div:nth-child(2){
+    margin-left: 0;
+    min-width: 100vw;
+  }
+}
