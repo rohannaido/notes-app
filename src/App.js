@@ -18,7 +18,7 @@ function App() {
   const userId = useSelector(state => state.user.uid);
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log("APP USEEFFECT", userId);
+    console.log("APP USEFFECT", userId);
     getUserNotes(dispatch, userId);
   },[userId])
 

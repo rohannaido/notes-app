@@ -1,14 +1,17 @@
 import { useEffect } from 'react';
 import './EditNote.css'
-import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useState } from 'react';
+import { editNote } from '../../firebase/service';
 
 const EditNote = () => {
 
-    const location = useLocation()
+    const location = useLocation();
+    const navigate = useNavigate();
     const noteId = location.pathname.split('/')[2];
     const data = useSelector(state => state.notes.allNotes.find((item) => item._id === noteId));
+    const dispatch = useDispatch();
     const [noteData, setNoteData] = useState(data)
     useEffect(() => {
 
@@ -28,8 +31,11 @@ const EditNote = () => {
                         ({...prev, text: e.target.value})) } />
                 </label>
                 <div className='editNote_bottomRow'>
-                    <button className='editNote_saveButton' onClick={() => {
-
+                    <button className='editNote_saveButton' onClick={(e) => {
+                        e.preventDefault();
+                        console.log(noteData);
+                        editNote(dispatch, noteData);
+                        navigate('/');
                     }}>
                         Save
                     </button>

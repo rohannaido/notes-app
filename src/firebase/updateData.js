@@ -11,7 +11,7 @@ import {
     serverTimestamp} from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getCurrUserId } from './auth'
-import { deleteNoteState, addNoteState } from "../redux/notesRedux";
+import { deleteNoteState, addNoteState, editNoteState } from "../redux/notesRedux";
 
 const db = getFirestore();
 
@@ -49,7 +49,25 @@ async function deleteNote(dispatch, noteId){
         console.log(error);
         throw error;
     }
-
 }
 
-export { createNote, deleteNote };
+async function editNote(dispatch, noteData){
+
+    const { _id, title, text } = noteData;
+    try{
+        const userUid = getCurrUserId();
+        const noteRef = doc(db, userUid , _id);
+        const updatedNote = await updateDoc(noteRef, {
+          title,
+          text,
+        });
+        console.log(updatedNote);
+        dispatch(editNoteState(noteData));
+    }
+    catch(error){
+        console.log("EDIT NOTE: ", error);
+        throw error;
+    }
+}
+
+export { createNote, deleteNote, editNote};
