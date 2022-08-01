@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/notes-app/static/css/main.7653b20b.css",
+    "main.js": "/notes-app/static/js/main.ca13bfb7.js",
+    "static/media/productiv-logo.png": "/notes-app/static/media/productiv-logo.cbcb464a7b9c634f7f6e.png",
+    "index.html": "/notes-app/index.html",
+    "main.7653b20b.css.map": "/notes-app/static/css/main.7653b20b.css.map",
+    "main.ca13bfb7.js.map": "/notes-app/static/js/main.ca13bfb7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7653b20b.css",
+    "static/js/main.ca13bfb7.js"
+  ]
+}
